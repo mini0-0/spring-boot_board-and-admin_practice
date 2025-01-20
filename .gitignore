@@ -2,7 +2,8 @@ HELP.md
 
 ### Querydsl
 /src/main/generated
-
+./gradle
+./build
 .idea/
 .jpb/
 # Created by https://www.toptal.com/developers/gitignore/api/java,gradle,intellij+all,windows,macos,visualstudiocode
