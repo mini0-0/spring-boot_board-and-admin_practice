@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin/members")
 @Controller
 public class AdminUserAccountController {
+
     @GetMapping
-    public String members (
-            @PageableDefault (size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable,
+    public String members(
+            @PageableDefault(size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable,
             Model model
     ) {
         return "admin/members";
     }
+
 }
+

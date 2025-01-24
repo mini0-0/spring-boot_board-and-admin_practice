@@ -5,14 +5,14 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
-@SuppressWarnings("unchecked")
-public record KakaoOAuth2Response (
+@SuppressWarnings("unchecked") // TODO: Map -> Object 변환 로직이 있어 제네릭 타입 캐스팅 문제를 무시한다. 더 좋은 방법이 있다면 고려할 수 있음.
+public record KakaoOAuth2Response(
         Long id,
         LocalDateTime connectedAt,
         Map<String, Object> properties,
         KakaoAccount kakaoAccount
-){
-    public record KakaoAccount (
+) {
+    public record KakaoAccount(
             Boolean profileNicknameNeedsAgreement,
             Profile profile,
             Boolean hasEmail,
@@ -21,7 +21,7 @@ public record KakaoOAuth2Response (
             Boolean isEmailVerified,
             String email
     ) {
-        public record Profile (String nickname) {
+        public record Profile(String nickname) {
             public static Profile from(Map<String, Object> attributes) {
                 return new Profile(String.valueOf(attributes.get("nickname")));
             }
@@ -39,7 +39,7 @@ public record KakaoOAuth2Response (
             );
         }
 
-        public String nickname() {return this.profile().nickname();}
+        public String nickname() { return this.profile().nickname(); }
     }
 
     public static KakaoOAuth2Response from(Map<String, Object> attributes) {

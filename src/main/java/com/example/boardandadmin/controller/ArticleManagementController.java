@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/management/articles")
 @Controller
 public class ArticleManagementController {
+
     @GetMapping
     public String articles(
             @PageableDefault(size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable,
@@ -18,4 +19,5 @@ public class ArticleManagementController {
     ) {
         return "management/articles";
     }
+
 }
