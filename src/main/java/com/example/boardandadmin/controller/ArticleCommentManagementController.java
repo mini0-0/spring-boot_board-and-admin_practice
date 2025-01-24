@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/management/article-comments")
 @Controller
 public class ArticleCommentManagementController {
+
     @GetMapping
     public String articleComments(
             @PageableDefault(size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable,
@@ -18,4 +19,5 @@ public class ArticleCommentManagementController {
     ) {
         return "management/articleComments";
     }
+
 }

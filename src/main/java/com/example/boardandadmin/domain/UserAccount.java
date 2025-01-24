@@ -13,32 +13,41 @@ import java.util.Objects;
 import java.util.Set;
 
 @Getter
-@ToString
+@ToString(callSuper = true)
 @Table(indexes = {
         @Index(columnList = "email", unique = true),
         @Index(columnList = "createdAt"),
         @Index(columnList = "createdBy")
 })
 @Entity
-public class UserAccount extends AuditingFields{
-
+public class UserAccount extends AuditingFields {
     @Id
     @Column(length = 50)
     private String userId;
 
-    @Setter @Column (nullable = false) private String userPassword;
+    @Setter
+    @Column(nullable = false)
+    private String userPassword;
 
     @Convert(converter = RoleTypesConverter.class)
     @Column(nullable = false)
     private Set<RoleType> roleTypes = new LinkedHashSet<>();
 
-    @Setter @Column(length = 100) private String email;
-    @Setter @Column(length = 100) private String nickname;
-    @Setter private String memo;
 
-    protected UserAccount() {}
+    @Setter
+    @Column(length = 100)
+    private String email;
+    @Setter
+    @Column(length = 100)
+    private String nickname;
+    @Setter
+    private String memo;
 
-    private UserAccount(String userId,String userPassword, Set<RoleType> roleTypes, String email, String nickname, String memo, String createdBy) {
+
+    protected UserAccount() {
+    }
+
+    private UserAccount(String userId, String userPassword, Set<RoleType> roleTypes, String email, String nickname, String memo, String createdBy) {
         this.userId = userId;
         this.userPassword = userPassword;
         this.roleTypes = roleTypes;

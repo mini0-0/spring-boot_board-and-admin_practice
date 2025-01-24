@@ -26,7 +26,7 @@ public record BoardAdminPrincipal(
         return BoardAdminPrincipal.of(username, password, roleTypes, email, nickname, memo, Map.of());
     }
 
-    public static BoardAdminPrincipal of(String username, String password, Set<RoleType> roleTypes, String email, String nickname, String memo, Map<String, Object> oAuth2Attributes){
+    public static BoardAdminPrincipal of(String username, String password, Set<RoleType> roleTypes, String email, String nickname, String memo, Map<String, Object> oAuth2Attributes) {
         return new BoardAdminPrincipal(
                 username,
                 password,
@@ -68,6 +68,7 @@ public record BoardAdminPrincipal(
         );
     }
 
+
     @Override public String getUsername() { return username; }
     @Override public String getPassword() { return password; }
     @Override public Collection<? extends GrantedAuthority> getAuthorities() { return authorities; }
@@ -79,4 +80,5 @@ public record BoardAdminPrincipal(
 
     @Override public Map<String, Object> getAttributes() { return oAuth2Attributes; }
     @Override public String getName() { return username; }
+
 }

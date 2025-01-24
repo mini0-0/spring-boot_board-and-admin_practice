@@ -6,7 +6,7 @@ import com.example.boardandadmin.domain.constant.RoleType;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-public record UserAccountDto (
+public record UserAccountDto(
         String userId,
         String userPassword,
         Set<RoleType> roleTypes,
@@ -52,4 +52,5 @@ public record UserAccountDto (
                 memo
         );
     }
+
 }

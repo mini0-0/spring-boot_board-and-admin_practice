@@ -9,5 +9,7 @@ public class MainController {
     @GetMapping("/")
     public String root() {
         return "forward:/management/articles";
+
     }
+
 }

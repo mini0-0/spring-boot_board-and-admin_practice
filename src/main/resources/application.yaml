@@ -10,6 +10,7 @@ logging:
 server.port: 8081
 
 spring:
+
   devtools.livereload.port: 35730
 
   datasource:
@@ -28,8 +29,7 @@ spring:
       hibernate.default_batch_fetch_size: 100
 
   sql.init.mode: always
-  thymeleaf3:
-    decoupled-logic: true
+  thymeleaf3.decoupled-logic: true
 
   security:
     oauth2:
@@ -47,5 +47,3 @@ spring:
             token-uri: https://kauth.kakao.com/oauth/token
             user-info-uri: https://kapi.kakao.com/v2/user/me
             user-name-attribute: id
-
-
