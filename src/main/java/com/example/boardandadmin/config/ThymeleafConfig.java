@@ -1,7 +1,6 @@
 package com.example.boardandadmin.config;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +18,7 @@ public class ThymeleafConfig {
 
         return defaultTemplateResolver;
     }
+
 
     @ConfigurationProperties("spring.thymeleaf3")
     public record Thymeleaf3Properties(boolean decoupledLogic) {}
