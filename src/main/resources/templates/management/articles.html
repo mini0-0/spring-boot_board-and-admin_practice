@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head th:replace="layouts/layout-head :: common_head(~{::title}, (~{::link} ?: ~{}))">
+<head id="layout-head">
     <meta charset="UTF-8">
     <title>게시글 관리 페이지</title>
 
@@ -10,14 +10,11 @@
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-    <header th:replace="layouts/layout-header :: header">헤더 삽입부</header>
-    <aside th:replace="layouts/layout-left-aside :: aside">왼쪽 사이드 바 삽입부</aside>
+    <header id="layout-header">헤더 삽입부</header>
+    <aside id="layout-left-aside">왼쪽 사이드 바 삽입부</aside>
 
     <!-- Main content -->
-    
-    <main th:replace="layouts/layout-main-table :: common_main_table('게시글 관리', (~{::#main-table} ?: ''))">메인 컨텐츠 영역</main>
-
-<!--    <main th:replace="layouts/layout-main-table :: common_main_table('게시글 관리', (~{::#main-table} ?: ~{}))">메인 컨텐츠 영역</main>-->
+    <main id="layout-main">
         <table id="main-table" class="table table-bordered table-striped">
             <thead>
             <tr>
@@ -44,7 +41,7 @@
                 <td>3</td>
                 <td>스프링 부트 블로그 정리</td>
                 <td>Rose</td>
-                <td><time datetime="2025-01-03T00:00:00">2025-01-03 00:00:00</time></td>
+                <td><time datetime="2022-01-03T00:00:00">2025-01-03 00:00:00</time></td>
             </tr>
             </tbody>
             <tfoot>
@@ -56,14 +53,15 @@
             </tr>
             </tfoot>
         </table>
+    </main>
     <!-- /.content -->
 
-    <aside th:replace="layouts/layout-right-aside :: aside">오른쪽 사이드 바 삽입부</aside>
-    <footer th:replace="layouts/layout-footer :: footer">푸터 삽입부</footer>
+    <aside id="layout-right-aside">오른쪽 사이드 바 삽입부</aside>
+    <footer id="layout-footer">푸터 삽입부</footer>
 </div>
 
 <!--/* REQUIRED SCRIPTS */-->
-<script th:replace="layouts/layout-scripts :: script">/* 공통 스크립트 삽입부 */</script>
+<script id="layout-scripts">/* 공통 스크립트 삽입부 */</script>
 
 <!--/* 페이지 전용 스크립트 */-->
 <script src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
