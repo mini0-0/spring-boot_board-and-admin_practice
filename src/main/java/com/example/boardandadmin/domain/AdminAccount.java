@@ -21,6 +21,7 @@ import java.util.Set;
 })
 @Entity
 public class AdminAccount extends AuditingFields {
+
     @Id
     @Column(length = 50)
     private String userId;
