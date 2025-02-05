@@ -53,8 +53,8 @@ class UserAccountManagementControllerTest {
     @Test
     void givenUserAccountId_whenRequestingUserAccount_thenReturnsUserAccount() throws Exception {
         // Given
-        String userId = "uno";
-        UserAccountDto userAccountDto = createUserAccountDto(userId, "Uno");
+        String userId = "rose";
+        UserAccountDto userAccountDto = createUserAccountDto(userId, "Rose");
         given(userAccountManagementService.getUserAccount(userId)).willReturn(userAccountDto);
 
         // When & Then
@@ -70,7 +70,7 @@ class UserAccountManagementControllerTest {
     @Test
     void givenUserAccountId_whenRequestingDeletion_thenRedirectsToUserAccountManagementView() throws Exception {
         // Given
-        String userId = "uno";
+        String userId = "rose";
         willDoNothing().given(userAccountManagementService).deleteUserAccount(userId);
 
         // When & Then
