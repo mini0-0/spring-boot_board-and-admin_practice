@@ -31,7 +31,7 @@ class AdminAccountServiceTest {
     @Test
     void givenExistentUserId_whenSearching_thenReturnsOptionalUserData() {
         // Given
-        String username = "uno";
+        String username = "rose";
         given(adminAccountRepository.findById(username)).willReturn(Optional.of(createAdminAccount(username)));
 
         // When
