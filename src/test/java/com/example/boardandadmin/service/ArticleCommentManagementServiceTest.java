@@ -171,7 +171,6 @@ class ArticleCommentManagementServiceTest {
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
                 "roseTest",
-                "pw",
                 Set.of(RoleType.ADMIN),
                 "rose-test@email.com",
                 "rose-test",
