@@ -97,7 +97,7 @@ class AdminAccountServiceTest {
 
         // Then
         assertThat(result).hasSize(0);
-        then(adminAccountRepository).should().findAll();
+         then(adminAccountRepository).should().findAll();
     }
 
     @DisplayName("회원 ID를 입력하면, 회원을 삭제한다.")
