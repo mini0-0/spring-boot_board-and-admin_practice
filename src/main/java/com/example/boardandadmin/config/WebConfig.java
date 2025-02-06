@@ -18,6 +18,7 @@ public class WebConfig implements WebMvcConfigurer {
             public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
                 if (modelAndView != null) {
                     modelAndView.addObject("requestURI", request.getRequestURI());
+                    modelAndView.addObject("responseStatus", response.getStatus());
                 }
             }
         });
