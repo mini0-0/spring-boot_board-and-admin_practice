@@ -87,7 +87,7 @@ class UserAccountManagementServiceTest {
         @Test
         void givenNothing_whenCallingUserAccountsApi_thenReturnsUserAccountList() throws Exception {
             // Given
-            UserAccountDto expectedUserAccount = createUserAccountDto("uno", "Uno");
+            UserAccountDto expectedUserAccount = createUserAccountDto("rose", "Rose");
             UserAccountClientResponse expectedResponse = UserAccountClientResponse.of(List.of(expectedUserAccount));
             server
                     .expect(requestTo(projectProperties.board().url() + "/api/userAccounts?size=10000"))
@@ -111,8 +111,8 @@ class UserAccountManagementServiceTest {
         @Test
         void givenUserAccountId_whenCallingUserAccountApi_thenReturnsUserAccount() throws Exception {
             // Given
-            String userId = "uno";
-            UserAccountDto expectedUserAccount = createUserAccountDto(userId, "Uno");
+            String userId = "rose";
+            UserAccountDto expectedUserAccount = createUserAccountDto(userId, "Rose");
             server
                     .expect(requestTo(projectProperties.board().url() + "/api/userAccounts/" + userId))
                     .andRespond(withSuccess(
@@ -135,7 +135,7 @@ class UserAccountManagementServiceTest {
         @Test
         void givenUserAccountId_whenCallingDeleteUserAccountApi_thenDeletesUserAccount() throws Exception {
             // Given
-            String userId = "uno";
+            String userId = "rose";
             server
                     .expect(requestTo(projectProperties.board().url() + "/api/userAccounts/" + userId))
                     .andExpect(method(HttpMethod.DELETE))
