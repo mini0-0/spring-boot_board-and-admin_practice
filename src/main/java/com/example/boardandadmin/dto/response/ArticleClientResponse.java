@@ -2,8 +2,6 @@ package com.example.boardandadmin.dto.response;
 
 import com.example.boardandadmin.dto.ArticleDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Embedded;
-import org.springframework.data.domain.Page;
 
 import java.util.List;
 
