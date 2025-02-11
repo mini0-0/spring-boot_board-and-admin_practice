@@ -2,6 +2,7 @@ package com.example.boardandadmin.controller;
 
 import com.example.boardandadmin.dto.response.ArticleCommentResponse;
 import com.example.boardandadmin.service.ArticleCommentManagementService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,12 @@ import org.springframework.web.bind.annotation.*;
 public class ArticleCommentManagementController {
 
     private final ArticleCommentManagementService articleCommentManagementService;
+
+    @ModelAttribute("requestURI")
+    public String requestURI(HttpServletRequest request) {
+        return request.getRequestURI();
+    }
+
 
     @GetMapping
     public String articleComments(Model model) {

@@ -3,6 +3,7 @@ package com.example.boardandadmin.controller;
 
 import com.example.boardandadmin.dto.response.AdminAccountResponse;
 import com.example.boardandadmin.service.AdminAccountService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,12 @@ import java.util.List;
 public class AdminAccountController {
 
     private final AdminAccountService adminAccountService;
+
+    @ModelAttribute("requestURI")
+    public String requestURI(HttpServletRequest request) {
+        return request.getRequestURI();
+    }
+
 
     @GetMapping("/admin/members")
     public String members() {

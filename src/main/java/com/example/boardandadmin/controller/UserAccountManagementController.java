@@ -2,6 +2,7 @@ package com.example.boardandadmin.controller;
 
 import com.example.boardandadmin.dto.response.UserAccountResponse;
 import com.example.boardandadmin.service.UserAccountManagementService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,14 +16,15 @@ public class UserAccountManagementController {
     private final UserAccountManagementService userAccountManagementService;
 
     @GetMapping
-    public String userAccounts(Model model) {
+    public String userAccounts(Model model, HttpServletRequest request) {
         model.addAttribute(
                 "userAccounts",
                 userAccountManagementService.getUserAccounts().stream().map(UserAccountResponse::from).toList()
         );
-
+        model.addAttribute("requestURI", request.getRequestURI());  // 🔹 추가된 부분
         return "management/user-accounts";
     }
+
 
     @ResponseBody
     @GetMapping("/{userId}")
